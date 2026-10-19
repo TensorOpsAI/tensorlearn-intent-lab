@@ -1,0 +1,12 @@
+name: Check intent submission
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+  pull-requests: read
+jobs:
+  grade:
+    uses: TensorOpsAI/tensorlearn-intent-grader/.github/workflows/grade.yml@9e40d82165c88f9028c6b119f5833dac5d48da9b
+    with:
+      grader-sha: 9e40d82165c88f9028c6b119f5833dac5d48da9b
