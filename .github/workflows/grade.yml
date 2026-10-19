@@ -1,12 +1,13 @@
 name: Check intent submission
 on:
-  push:
+  pull_request:
+    types: [opened, synchronize, reopened]
     branches: [main]
 permissions:
   contents: read
   pull-requests: read
 jobs:
   grade:
-    uses: TensorOpsAI/tensorlearn-intent-grader/.github/workflows/grade.yml@9e40d82165c88f9028c6b119f5833dac5d48da9b
+    uses: TensorOpsAI/tensorlearn-intent-grader/.github/workflows/grade.yml@46de78b3462c3d3a18c2f55e81d645a816815302
     with:
-      grader-sha: 9e40d82165c88f9028c6b119f5833dac5d48da9b
+      grader-sha: 46de78b3462c3d3a18c2f55e81d645a816815302
