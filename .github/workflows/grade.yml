@@ -6,8 +6,9 @@ on:
 permissions:
   contents: read
   pull-requests: read
+  id-token: write
 jobs:
   grade:
-    uses: TensorOpsAI/tensorlearn-intent-grader/.github/workflows/grade.yml@6e73f4b36097d43672ff6f7afc240106445c6fd5
+    uses: TensorOpsAI/tensorlearn-intent-grader/.github/workflows/grade.yml@ae587788e5d4799ecbb2e47ccc346b8316657c71
     with:
-      grader-sha: 6e73f4b36097d43672ff6f7afc240106445c6fd5
+      grader-sha: ae587788e5d4799ecbb2e47ccc346b8316657c71
