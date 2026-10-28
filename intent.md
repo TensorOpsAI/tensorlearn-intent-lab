@@ -120,3 +120,5 @@ in the diff versus this intent. Before writing any code, Claude should ask
 the user for approval of this plan, and should ask again before touching
 any file outside the two listed above or before adding any requirement not
 already stated here.
+
+
