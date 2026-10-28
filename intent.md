@@ -41,4 +41,4 @@ The plan is to update this file follwoing the intructions provided/ We will then
 ```
 
 ## Verification
-Verify the result by checking the json code and check for any errors.
+Verify the result by checking the json code and check for any errors using npm test and git diff --check.
