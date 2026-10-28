@@ -1,19 +1,44 @@
 # Intent
 
 ## Goal
-TODO: describe the outcome and the user who needs it.
+The goal is to following the training excersice instructions. We then need to submit the solution branch and score the excersice.
 
 ## Scope
-TODO: identify the allowed changes and the work deliberately excluded.
+The scope is to set up our machine with claude and Github CLI and fork down the project and create our own branch from it.
 
 ## Constraints
-TODO: state the project and data constraints the implementation must preserve.
+Some of the constraints are not having a pro or max version of Clause code.
 
 ## Plan
-TODO: give Claude a short, ordered implementation plan.
+The plan is to update this file follwoing the intructions provided/ We will then submit a Pr to score.
 
 ## Acceptance
-TODO: specify useful positive and negative examples; add the JSON contract described in the brief.
+```json
+{
+  "schema": 1,
+  "change": "ticket-csv-preview",
+  "allowed_changes": ["src/import-tickets.mjs", "tests/import-tickets.test.mjs"],
+  "protected_paths": ["src/tickets.mjs", ".github/", "CLAUDE.md"],
+  "non_goals": ["ui", "database", "network"],
+  "requirements": {
+    "columns": ["title", "priority"],
+    "default_priority": "normal",
+    "valid_priorities": ["low", "normal", "urgent"],
+    "reject_unknown_columns": true,
+    "reject_empty_title": true,
+    "max_rows": 100,
+    "side_effects": "preview-only"
+  },
+  "verification": ["npm test", "git diff --check"],
+  "approval": "ask-before-implementation",
+  "acceptance_cases": [
+    {
+      "csv": "title,priority\nPrinter issue,urgent\n",
+      "expected": {"tickets":[{"title":"Printer issue","priority":"urgent"}]}
+    }
+  ]
+}
+```
 
 ## Verification
-TODO: explain how to verify the result and when to ask the user for approval.
+Verify the result by checking the json code and check for any errors.
